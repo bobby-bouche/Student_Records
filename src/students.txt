@@ -1,0 +1,28 @@
+1001,Alice,Computer Science, 3.8
+1002,Bob,Mathematics,3.6
+1003,Charlie,Physics,3.2
+1004,Diana,Computer Science,3.9
+1005,Ethan,History,3.4
+1006,Fiona,Engineering,3.7
+1007,George,Biology,3.1
+1008,Hannah,Mathematics,3.5
+1009,Ian,Computer Science,3.3
+1010,Jasmine,Economics,3.8
+1011,Kyle,Engineering,2.9
+1012,Lara,History,3.2
+1013,Marcus,Computer Science,3.6
+1014,Nina,Mathematics,3.9
+1015,Oscar,Biology,3.0
+1016,Paula,Economics,3.4
+1017,Quentin,Engineering,3.5
+1018,Rachel,Physics,3.7
+1019,Sam,Computer Science,3.1
+1020,Tina,Mathematics,3.8
+1021,Uma,History,3.3
+1022,Victor,Biology,3.6
+1023,Wendy,Economics,3.2
+1024,Xavier,Engineering,3.9
+1025,Yara,Computer Science,3.5
+1026,Zach,Physics,3.4
+1027,Amelia,Mathematics,3.7
+1028,Brandon,History,3.0
