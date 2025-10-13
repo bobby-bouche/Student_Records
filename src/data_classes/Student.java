@@ -1,6 +1,8 @@
 package data_classes;
 
-public class Student extends Person {
+import interfaces.Saveable;
+
+public class Student extends Person implements Saveable {
 	
 	// student fields
 	private String course;
@@ -63,11 +65,27 @@ public class Student extends Person {
 	}
 
 	
+	
     // toString
 	@Override
 	String getDetails() {
+		String studentDetails = "Student [course=" + course + ", gpa=" + gpa + "]";
+		return studentDetails;
+	}
+
+	
+	@Override
+	public String toFileFormat() {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+
+	@Override
+	public void fromFileFormat(String data) {
+		// TODO Auto-generated method stub
+		
+	}
+	
 
 }
