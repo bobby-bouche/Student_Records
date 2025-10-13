@@ -7,9 +7,11 @@ public class Student extends Person {
 	private double gpa;
 	
 	
+	
 	// symbolic constants
 	private static String default_course;
 	private static double default_gpa;
+	
 	
 	
 	// initializer
@@ -19,11 +21,19 @@ public class Student extends Person {
 	}
 	
 	
+	
 	// constructors
 	public Student() {
 		super();
 	}
 	
+	public Student(String course) {
+		this(course, default_gpa);
+	}
+	
+	public Student(double gpa) {
+		this(default_course, gpa);
+	}
 	
 	public Student(String course, double gpa) {
 		this.course = course;
@@ -31,6 +41,7 @@ public class Student extends Person {
 	}
 	
 
+	
 	// getters and setters
 	public String getCourse() {
 		return course;
