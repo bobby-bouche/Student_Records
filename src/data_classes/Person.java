@@ -20,6 +20,11 @@ public abstract class Person {
 		this.id = id;
 		this.name = name;
 	}
+	
+	
+	
+	// validations
+	// TODO validation methods
 
 	
 	
@@ -48,10 +53,7 @@ public abstract class Person {
 	// toString
 	@Override
 	public String toString() {
-		return "Person "
-			 + "[id=" + id
-			 + ",name=" + name
-			 + "]";
+		return id + "," + name;
 	}
 	
 }

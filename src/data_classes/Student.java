@@ -42,6 +42,10 @@ public class Student extends Person implements Saveable {
 		this.gpa    = gpa;
 	}
 	
+	
+	// validations
+	// TODO validation methods
+	
 
 	
 	// getters and setters
