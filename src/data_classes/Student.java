@@ -1,5 +1,6 @@
 package data_classes;
 
+import enums.Course;
 import interfaces.Saveable;
 
 public class Student extends Person implements Saveable {
@@ -11,15 +12,17 @@ public class Student extends Person implements Saveable {
 	
 	
 	// symbolic constants
-	private static String default_course;
-	private static double default_gpa;
+	private static String DEFAULT_COURSE;
+	private static double DEFAULT_GPA;
+	private static double MAX_GPA;
 	
 	
 	
 	// initializer
 	{
-		default_course = "n/a";
-		default_gpa    = 0.0;
+		DEFAULT_COURSE = "N/A";
+		DEFAULT_GPA    = 0.0;
+		MAX_GPA        = 4.0;
 	}
 	
 	
@@ -30,22 +33,35 @@ public class Student extends Person implements Saveable {
 	}
 	
 	public Student(String course) {
-		this(course, default_gpa);
+		this(course, DEFAULT_GPA);
 	}
 	
 	public Student(double gpa) {
-		this(default_course, gpa);
+		this(DEFAULT_COURSE, gpa);
 	}
 	
 	public Student(String course, double gpa) {
+		validateCourse(course);
 		this.course = course;
+		validateGPA(gpa);
 		this.gpa    = gpa;
 	}
 	
 	
-	// validations
-	// TODO validation methods
 	
+	// validations
+	private static void validateCourse(String course) {
+		if(!Course.validateCourse(course)) {
+			throw new IllegalArgumentException("Error, Invalid course name: " + course);
+		}
+	}
+	
+	
+	private static void validateGPA(double gpa) {
+		if(gpa < DEFAULT_GPA || gpa > MAX_GPA){
+			throw new IllegalArgumentException("Error, Invalid gpa: " + gpa);
+		}
+	}
 
 	
 	// getters and setters
@@ -55,6 +71,7 @@ public class Student extends Person implements Saveable {
 
 	
 	public void setCourse(String course) {
+		validateCourse(course);
 		this.course = course;
 	}
 
@@ -65,6 +82,7 @@ public class Student extends Person implements Saveable {
 	
 	
 	public void setGpa(double gpa) {
+		validateGPA(gpa);
 		this.gpa = gpa;
 	}
 

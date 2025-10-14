@@ -1,6 +1,6 @@
 package enums;
 
-public enum Courses {
+public enum Course {
 	
 	// course list
     COMPUTER_SCIENCE ("computer_science"),
@@ -20,7 +20,7 @@ public enum Courses {
 	
 	
 	// constructor
-	Courses(String course){
+	Course(String course){
 		this.setCourse(course);
 	}
 
@@ -37,13 +37,15 @@ public enum Courses {
 	}
 	
 	
-	public static Courses validateCourse(String inputCourse) {
-		for(Courses course : Courses.values()) {
+	
+    // method that takes String input and validates for valid enum value match
+	public static boolean validateCourse(String inputCourse) {
+		for(Course course : Course.values()) {
 			if(course.course.equalsIgnoreCase(inputCourse)) {
-				return course;
+				return true;
 			}
 		}
-		return Courses.NOT_APPLICABLE;
+		return false;
 	}
 
 }
