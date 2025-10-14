@@ -25,6 +25,13 @@ public abstract class Person {
 	
 	// validations
 	// TODO validation methods
+	private static void validateID(int id) {
+		
+	}
+	
+	private static void validateName(String name) {
+		
+	}
 
 	
 	

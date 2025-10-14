@@ -2,15 +2,14 @@ package enums;
 
 public enum Course {
 	
-	// course list
+	// courses
     COMPUTER_SCIENCE ("computer_science"),
     MATHEMATICS ("mathematics"),
     PHYSICS("physics"),
     HISTORY("history"),
     ENGINEERING("engineering"),
     BIOLOGY("biology"),	
-    ECONOMICS("economics"),
-	NOT_APPLICABLE("not_applicable");
+    ECONOMICS("economics");
 	
 	
 	
@@ -47,5 +46,6 @@ public enum Course {
 		}
 		return false;
 	}
+	
 
 }
