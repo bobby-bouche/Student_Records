@@ -70,8 +70,10 @@ public abstract class Person {
 	}
 
 	
+	
 	// abstrct methods
 	abstract String getDetails();
+	
 	
 	
 	// toString
