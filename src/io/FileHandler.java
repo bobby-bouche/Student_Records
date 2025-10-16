@@ -38,22 +38,21 @@ public class FileHandler {
 	
 	// method to load data from a given file
 	public static ArrayList<String> loadRecords(String fileName) {
+		ArrayList<String> data = new ArrayList<>();
 		try {
-			ArrayList<String> data = new ArrayList<>();
-			FileReader     fr = new FileReader(fileName);
-			BufferedReader br = new BufferedReader(fr);
+			FileReader     fr  = new FileReader(fileName);
+			BufferedReader br  = new BufferedReader(fr);
 			String line;
 			while((line = br.readLine()) != null) {
 				data.add(line);
 				// TODO fromFileFormat();
 			}
 			br.close();
-			return data;
 		}
 		catch(IOException e) {
 			System.out.println(e.getMessage());
 		}
-		return null;
+		return data;
 	}
 	
 	
