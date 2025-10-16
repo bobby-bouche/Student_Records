@@ -98,8 +98,7 @@ public class Student extends Person implements Saveable {
 	
 	@Override
 	public String toFileFormat() {
-		// TODO Auto-generated method stub
-		return null;
+		return getDetails();
 	}
 
 

@@ -6,6 +6,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import data_classes.Person;
+import data_classes.Student;
 
 public class FileHandler {
 	
@@ -18,12 +19,12 @@ public class FileHandler {
 	
 	
 	// method to save data to a given file
-	public static void saveRecords(String fileName, ArrayList<String> data) {
+	public static void saveRecords(String fileName, ArrayList<Student> students) {
 		try {
 			FileWriter fw  = new FileWriter(fileName, true);
 			PrintWriter pw = new PrintWriter(fw);
-			for(int i = 0; i < data.size(); i++) {
-				pw.println(data.get(i));
+			for(int i = 0; i < students.size(); i++) {
+				pw.println(students.get(i).toString());
 			}
 			pw.close();
 		}
@@ -35,8 +36,8 @@ public class FileHandler {
 	
 	
 	// method to load data from a given file
-	public static void loadRecords(String fileName, ArrayList<String> data) {
-		
+	public static ArrayList<String> loadRecords(String fileName) {
+		return null;
 	}
 
 }
