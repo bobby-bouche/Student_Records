@@ -37,14 +37,16 @@ public class FileHandler {
 	
 	
 	// method to load data from a given file
-	public static ArrayList<String> loadRecords(String fileName) {
-		ArrayList<String> data = new ArrayList<>();
+	public static ArrayList<Student> loadRecords(String fileName) {
+		ArrayList<Student> data = new ArrayList<>();
+		Student student = null;
 		try {
 			FileReader     fr  = new FileReader(fileName);
 			BufferedReader br  = new BufferedReader(fr);
 			String line;
 			while((line = br.readLine()) != null) {
-				data.add(line);
+				student = new Student();
+				//data.add(student.fromFileFormat(line));
 				// TODO fromFileFormat();
 			}
 			br.close();

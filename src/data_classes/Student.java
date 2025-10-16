@@ -32,15 +32,16 @@ public class Student extends Person implements Saveable {
 		super();
 	}
 	
-	public Student(String course) {
-		this(course, DEFAULT_GPA);
+	public Student(int id, String name, String course) {
+		this(id, name, course, DEFAULT_GPA);
 	}
 	
-	public Student(double gpa) {
-		this(DEFAULT_COURSE, gpa);
+	public Student(int id, String name, double gpa) {
+		this(id, name, DEFAULT_COURSE, gpa);
 	}
 	
-	public Student(String course, double gpa) {
+	public Student(int id, String name, String course, double gpa) {
+		super(id, name);
 		validateCourse(course);
 		this.course = course;
 		validateGPA(gpa);
@@ -91,7 +92,7 @@ public class Student extends Person implements Saveable {
     // toString
 	@Override
 	String getDetails() {
-		String studentDetails = "Student [course=" + course + ", gpa=" + gpa + "]";
+		String studentDetails = this.getId() + "," + this.getName() + "," + course + "," + gpa;
 		return studentDetails;
 	}
 
