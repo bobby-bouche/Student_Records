@@ -8,6 +8,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import data_classes.Student;
+import exceptions.FileOperationException;
 
 public class FileHandler {
 	
@@ -21,9 +22,7 @@ public class FileHandler {
 	
 	// method to save data to a given file
 	public static void saveRecords(String fileName, ArrayList<Student> students) {
-		try {
-			FileWriter fw  = new FileWriter(fileName, true);
-			PrintWriter pw = new PrintWriter(fw);
+		try (PrintWriter pw = new PrintWriter(new FileWriter(fileName, true))) {
 			for(int i = 0; i < students.size(); i++) {
 				pw.println(students.get(i).toFileFormat());
 			}
@@ -37,12 +36,10 @@ public class FileHandler {
 	
 	
 	// method to load data from a given file
-	public static ArrayList<Student> loadRecords(String fileName) {
+	public static ArrayList<Student> loadRecords(String fileName) throws FileOperationException {
 		ArrayList<Student> data = new ArrayList<>();
-		Student student = null;
-		try {
-			FileReader     fr  = new FileReader(fileName);
-			BufferedReader br  = new BufferedReader(fr);
+		Student student = null; 
+		try (BufferedReader br  = new BufferedReader(new FileReader(fileName))){
 			String line;
 			while((line = br.readLine()) != null) {
 				student = new Student();
