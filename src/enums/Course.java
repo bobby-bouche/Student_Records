@@ -3,7 +3,7 @@ package enums;
 public enum Course {
 	
 	// courses
-    COMPUTER_SCIENCE ("computer_science"),
+    COMPUTER_SCIENCE ("computer science"),
     MATHEMATICS ("mathematics"),
     PHYSICS("physics"),
     HISTORY("history"),

@@ -26,5 +26,4 @@
 1026,Zach,Physics,3.4
 1027,Amelia,Mathematics,3.7
 1028,Brandon,History,3.0
-Student [course=computer_science, gpa=3.4]
-1030,billy,computer_science,3.7
+1030,billy,computer science,3.7

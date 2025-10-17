@@ -105,8 +105,17 @@ public class Student extends Person implements Saveable {
 
 	@Override
 	public void fromFileFormat(String data) {
-		// TODO Auto-generated method stub
-		
+		String[] fields = data.split(",");
+		setId(Integer.parseInt(fields[0]));
+		setName(fields[1]);
+		this.setCourse(fields[2]);
+		this.setGpa(Double.parseDouble(fields[3]));	
+	}
+	
+	
+	@Override
+	public String toString() {
+		return "Student " + getDetails();
 	}
 	
 

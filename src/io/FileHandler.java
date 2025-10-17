@@ -46,8 +46,8 @@ public class FileHandler {
 			String line;
 			while((line = br.readLine()) != null) {
 				student = new Student();
-				//data.add(student.fromFileFormat(line));
-				// TODO fromFileFormat();
+				student.fromFileFormat(line);
+				data.add(student);
 			}
 			br.close();
 		}
