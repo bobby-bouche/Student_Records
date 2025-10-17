@@ -58,4 +58,18 @@ public class FileHandler {
 	}
 	
 	
+	
+	
+	
+	/*
+	 * For a later time...
+	 * 
+	 * 	public static void updateRecord(?);
+	
+		public static void deleteRecord(?);
+		
+		public static void deleteFile(String fileName);
+	 */
+
+	
 }
