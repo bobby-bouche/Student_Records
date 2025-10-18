@@ -20,10 +20,7 @@ public class Driver {
 			manager.saveAll("students.txt");
 			
 			//manager.removeStudent(1009);
-	
-			//manager.saveAll("students.txt");
 			
-			//manager.studentsMapToList();
 			for(Student student : manager.studentsMapToList()) {
 				System.out.println(student.toFileFormat());
 			}
