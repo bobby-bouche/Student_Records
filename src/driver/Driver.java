@@ -2,7 +2,6 @@ package driver;
 
 import data_classes.Student;
 import exceptions.FileOperationException;
-import io.FileHandler;
 import management.RecordManager;
 
 public class Driver {
@@ -13,15 +12,15 @@ public class Driver {
 		try {
 			
 			RecordManager manager = new RecordManager();
-			Student stu_1 = new Student(1031, "Tim", "engineering", 3.1);
+			Student stu_1 = new Student(1032, "Tony", "engineering", 3.0);
 			
 			manager.loadAll("students.txt");
 		
 			manager.addStudent(stu_1);
 			manager.saveAll("students.txt");
 			
-			//manager.removeStudent(1005);
-			//FileHandler.saveRecords("students.txt", manager.studentsMapToList());
+			//manager.removeStudent(1009);
+	
 			//manager.saveAll("students.txt");
 			
 			//manager.studentsMapToList();

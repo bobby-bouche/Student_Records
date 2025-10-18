@@ -5,14 +5,13 @@
 1028,Brandon,History,3.0
 1030,billy,computer science,3.7
 1031,Tim,engineering,3.1
+1032,Tony,engineering,3.0
 1001,Alice,Computer Science,3.8
 1002,Bob,Mathematics,3.6
 1003,Charlie,Physics,3.2
 1004,Diana,Computer Science,3.9
-1005,Ethan,History,3.4
 1006,Fiona,Engineering,3.7
 1007,George,Biology,3.1
-1008,Hannah,Mathematics,3.5
 1009,Ian,Computer Science,3.3
 1010,Jasmine,Economics,3.8
 1011,Kyle,Engineering,2.9
