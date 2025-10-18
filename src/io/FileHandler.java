@@ -22,7 +22,7 @@ public class FileHandler {
 	
 	// method to save data to a given file
 	public static void saveRecords(String fileName, ArrayList<Student> students) {
-		try (PrintWriter pw = new PrintWriter(new FileWriter(fileName, true))) {
+		try (PrintWriter pw = new PrintWriter(new FileWriter(fileName))) {
 			for(int i = 0; i < students.size(); i++) {
 				pw.println(students.get(i).toFileFormat());
 			}
