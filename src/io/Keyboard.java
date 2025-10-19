@@ -32,12 +32,12 @@ public class Keyboard {
 			
 			try {
 				num = Integer.parseInt(strInput);
-				if(num > low && num <= high) {
+				if(num >= low && num <= high) {
 					valid = true;
 					break;
 				}
 				else {
-					System.out.println(errorMsg);
+					System.out.println(errorMsg + "\n");
 				}
 			}
 			catch(NumberFormatException e) {

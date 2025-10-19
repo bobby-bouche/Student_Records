@@ -2,6 +2,7 @@ package driver;
 
 import java.io.FileNotFoundException;
 
+import data_classes.Student;
 import io.Keyboard;
 import management.RecordManager;
 
@@ -32,7 +33,6 @@ public class Driver {
 	 * manager.loadAll(fileName);
 	 */
 	private void init() {
-
 		manager.loadAll("students.txt");
 		displayMainMenu();
 	}
@@ -51,11 +51,11 @@ public class Driver {
 		
 		while(proceed) {
 			
-			System.out.println("------Student Records Management System------\n"
-					   + "--------------Main Menu--------------\n"
-					   + "1. Search Menu\n"
-					   + "2. Registration Menu\n"
-					   + "3. Exit\n");
+			System.out.println("------ Student Records Management System ------\n\n"
+					         + "-------------- Main Menu --------------\n"
+					         + "1. Search Menu\n"
+					         + "2. Registration Menu\n"
+					         + "3. Exit\n");
 			
 			choice = kb.readInteger(promptMsg, errorMsg, 1, 3);
 			
@@ -75,15 +75,56 @@ public class Driver {
 					break;
 					
 				default:
-					System.out.println(errorMsg + "; " + choice);
-				
+					System.out.println(errorMsg + "; " + choice);	
 			}
 		}
 	}
 	
 	
 	
-	private void displaySearchMenu() {}
+	private void displaySearchMenu() {
+		
+		int choice;
+		boolean proceed = true;
+		
+		String promptMsg = "Make a selection:\n";
+		String errorMsg  = "Invalid entry, enter and integer value in the range (1-3)\n";
+		
+		while(proceed) {
+			
+			System.out.println("\n------ Student Records Management System ------\n\n"
+					         + "-------------- Search Menu --------------\n"
+					         + "1. Search student by ID\n"
+					         + "2. Display all students\n"
+					         + "3. Back\n");
+			
+			choice = kb.readInteger(promptMsg, errorMsg, 1, 3);
+			
+			switch(choice) {
+			
+				case 1:
+					int inputId;
+					String IdPromptMsg = "enter studentID: \n";
+					String IdErrorMsg  = "Invalid id";
+					
+					inputId = kb.reaadInteger(IdPromptMsg, IdErrorMsg);
+					manager.searchStudentByID(inputId);
+					break;
+					
+				case 2:
+					manager.listAllStudents();
+					break;
+					
+				case 3:
+					System.out.println("Returning to previous menu..\n\n");
+					proceed = false;
+					break;
+					
+				default:
+					System.out.println(errorMsg + "; " + choice);	
+			}
+		}
+	}
 	
 	
 	

@@ -42,13 +42,13 @@ public class RecordManager {
 	
 	
 	
-	// method to remove student from students
-	public void removeStudent(int id) {
+	public void searchStudentByID(int id) {
 		if(student_Map.containsKey(id)) {
-			student_Map.remove(id);
+			Student student = getStudent(id);
+			System.out.println(student.toString() + "\n");
 		}
 		else {
-			System.out.println("Sorry, this id does not exist in system");
+			System.out.println("Error, Invalid id: " + id);
 		}
 	}
 	
@@ -60,6 +60,25 @@ public class RecordManager {
 			System.out.println(student.toString());
 		}
 	}
+	
+	
+	private Student getStudent(int id) {
+		Student student;
+		student = student_Map.get(id);
+		return student;
+	}
+	
+	
+	// method to remove student from students
+	public void removeStudent(int id) {
+		if(student_Map.containsKey(id)) {
+			student_Map.remove(id);
+		}
+		else {
+			System.out.println("Sorry, this id does not exist in system");
+		}
+	}
+	
 	
 	
 	public ArrayList<Student> studentsMapToList() {
