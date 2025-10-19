@@ -71,6 +71,7 @@ public class Driver {
 					
 				case 3:
 					System.out.println("Bye for now!");
+					manager.saveAll("students.txt");
 					proceed = false;
 					break;
 					
@@ -143,10 +144,9 @@ public class Driver {
 			         + "-------------- Search Menu --------------\n"
 			         + "1. Register new student\n"
 			         + "2. Unregister student\n"
-			         + "3. Save changes\n"
-			         + "4. Back\n");
+			         + "3. Back\n");
 	
-			choice = kb.readInteger(promptMsg, errorMsg, 1, 4);
+			choice = kb.readInteger(promptMsg, errorMsg, 1, 3);
 			
 			switch(choice) {
 			
@@ -157,13 +157,23 @@ public class Driver {
 					break;
 					
 				case 2:
+					int studentID;
+					String deletePrompt = "enter studentID: ";
+					String deleteError  = "Invalid studentID";
 					
+					studentID = kb.reaadInteger(deletePrompt, deleteError);
+					manager.removeStudent(studentID); // might cause an issue at runtime with a wrong id input
+					break;
 					
-				
+				case 3:
+					System.out.println("Returning to previous menu..\n\n");
+					proceed = false;
+					break;
+					
+				default:
+					System.out.println("Invalid entry");
 			}
-			
 		}
-		
 	}
 	
 	
