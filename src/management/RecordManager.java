@@ -1,11 +1,11 @@
 package management;
 
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 import data_classes.Student;
+import exceptions.FileOperationException;
 import io.FileHandler;
 
 public class RecordManager {
@@ -81,11 +81,17 @@ public class RecordManager {
 	
 	
 	public void loadAll(String fileName) {
-		ArrayList<Student> studentList = new ArrayList<>();
-		studentList = FileHandler.loadRecords(fileName);
-		for(Student student : studentList) {
-			student_Map.put(student.getId(), student);
+		try {
+			ArrayList<Student> studentList = new ArrayList<>();
+			studentList = FileHandler.loadRecords(fileName);
+			for(Student student : studentList) {
+				student_Map.put(student.getId(), student);
+			}
 		}
+		catch(FileOperationException e) {
+			System.out.println(e.getMessage());
+		}
+
 	}
 	
 	
