@@ -129,7 +129,42 @@ public class Driver {
 	
 	
 	
-	private void displayRegistrationMenu() {}
+	private void displayRegistrationMenu() {
+		
+		int choice;
+		boolean proceed = false;
+		
+		String promptMsg = "Make a selection:\n";
+		String errorMsg  = "Invalid entry, enter and integer value in the range (1-3)\n";
+		
+		while(proceed) {
+			
+			System.out.println("\n------ Student Registration Management System ------\n\n"
+			         + "-------------- Search Menu --------------\n"
+			         + "1. Register new student\n"
+			         + "2. Unregister student\n"
+			         + "3. Save changes\n"
+			         + "4. Back\n");
+	
+			choice = kb.readInteger(promptMsg, errorMsg, 1, 4);
+			
+			switch(choice) {
+			
+				case 1:
+					Student student = new Student();
+					// TODO create student object
+					manager.addStudent(student);
+					break;
+					
+				case 2:
+					
+					
+				
+			}
+			
+		}
+		
+	}
 	
 	
 	
