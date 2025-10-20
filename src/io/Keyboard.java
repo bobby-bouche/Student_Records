@@ -48,7 +48,7 @@ public class Keyboard {
 	}
 	
 	
-	public int reaadInteger(String promptMsg, String errorMsg) {
+	public int readInteger(String promptMsg, String errorMsg) {
 		
 		int num = 0;
 		boolean valid = false;

@@ -108,7 +108,7 @@ public class Driver {
 					String IdPromptMsg = "enter studentID: \n";
 					String IdErrorMsg  = "Invalid id";
 					
-					inputId = kb.reaadInteger(IdPromptMsg, IdErrorMsg);
+					inputId = kb.readInteger(IdPromptMsg, IdErrorMsg);
 					manager.searchStudentByID(inputId);
 					break;
 					
@@ -151,9 +151,7 @@ public class Driver {
 			switch(choice) {
 			
 				case 1:
-					Student student = new Student();
-					// TODO create student object
-					manager.addStudent(student);
+					// TODO manager.registerNewStudent();
 					break;
 					
 				case 2:
@@ -161,9 +159,10 @@ public class Driver {
 					String deletePrompt = "enter studentID: ";
 					String deleteError  = "Invalid studentID";
 					
-					studentID = kb.reaadInteger(deletePrompt, deleteError);
-					manager.removeStudent(studentID); // might cause an issue at runtime with a wrong id input
+					studentID = kb.readInteger(deletePrompt, deleteError);
+					manager.removeStudent(studentID); // might cause an issue at runtime with a wrong id// input
 					break;
+					// TODO manager.unregisterStudent();
 					
 				case 3:
 					System.out.println("Returning to previous menu..\n\n");
