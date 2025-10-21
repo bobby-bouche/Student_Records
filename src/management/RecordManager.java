@@ -116,6 +116,5 @@ public class RecordManager {
 			System.out.println(e.getMessage());
 		}
 	}
-		
 	
 }
