@@ -30,7 +30,6 @@ public enum Course {
 		return course;
 	}
 
-
 	public void setCourse(String course) {
 		this.course = course;
 	}
