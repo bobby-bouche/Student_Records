@@ -48,6 +48,7 @@ public class Keyboard {
 	}
 	
 	
+	
 	public int readInteger(String promptMsg, String errorMsg) {
 		
 		int num = 0;
@@ -70,6 +71,8 @@ public class Keyboard {
 		}
 		return num;
 	}
+	
+	
 	
 	public double readDouble(String promptMsg, String errorMsg) {
 		
