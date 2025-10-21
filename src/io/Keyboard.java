@@ -71,6 +71,29 @@ public class Keyboard {
 		return num;
 	}
 	
+	public double readDouble(String promptMsg, String errorMsg) {
+		
+		double num = 0.0;
+		boolean valid = false;
+		String strInput;
+		
+		while(valid == false) {
+			
+			System.out.println(promptMsg);
+			strInput = input.nextLine();
+			
+			try {
+				num = Double.parseDouble(strInput);
+				valid = true;
+				break;
+			}
+			catch(NumberFormatException e) {
+				System.out.println(errorMsg);
+			}
+		}
+		return num;
+	}
+	
 	
 	
 	public String readString(String promptMsg, String errorMsg) {

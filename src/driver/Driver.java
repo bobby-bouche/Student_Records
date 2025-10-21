@@ -133,7 +133,7 @@ public class Driver {
 	private void displayRegistrationMenu() {
 		
 		int choice;
-		boolean proceed = false;
+		boolean proceed = true;
 		
 		String promptMsg = "Make a selection:\n";
 		String errorMsg  = "Invalid entry, enter and integer value in the range (1-3)\n";
@@ -151,7 +151,12 @@ public class Driver {
 			switch(choice) {
 			
 				case 1:
-					// TODO manager.registerNewStudent();
+					int id        = kb.readInteger("enter studentID: \n", "Invalid studentID, try again: \n");
+					String name   = kb.readString("enter student name: \n", "Invalid student name, try again: \n");
+					String course = kb.readString("enter course: \n", "Invalid course, try again: \n");
+					Double gpa    = kb.readDouble("enter gpa: \n", "Invalid gpa, try again: \n");
+					Student student = new Student(id,name,course,gpa);
+					manager.addStudent(student);
 					break;
 					
 				case 2:
@@ -160,9 +165,8 @@ public class Driver {
 					String deleteError  = "Invalid studentID";
 					
 					studentID = kb.readInteger(deletePrompt, deleteError);
-					manager.removeStudent(studentID); // might cause an issue at runtime with a wrong id// input
+					manager.removeStudent(studentID); // might cause an issue at runtime with a wrong id input
 					break;
-					// TODO manager.unregisterStudent();
 					
 				case 3:
 					System.out.println("Returning to previous menu..\n\n");
