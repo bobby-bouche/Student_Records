@@ -12,7 +12,6 @@ public class Student extends Person implements Saveable {
 	
 	
 	// symbolic constants
-	private static String DEFAULT_COURSE;
 	private static double DEFAULT_GPA;
 	private static double MAX_GPA;
 	
@@ -20,9 +19,8 @@ public class Student extends Person implements Saveable {
 	
 	// initializer
 	{
-		DEFAULT_COURSE = "N/A";
-		DEFAULT_GPA    = 0.0;
-		MAX_GPA        = 4.0;
+		DEFAULT_GPA = 0.0;
+		MAX_GPA     = 4.0;
 	}
 	
 	
@@ -32,20 +30,12 @@ public class Student extends Person implements Saveable {
 		super();
 	}
 	
-	public Student(int id, String name, String course) {
-		this(id, name, course, DEFAULT_GPA);
-	}
-	
-	public Student(int id, String name, double gpa) {
-		this(id, name, DEFAULT_COURSE, gpa);
-	}
-	
 	public Student(int id, String name, String course, double gpa) {
 		super(id, name);
 		validateCourse(course);
 		this.course = course;
 		validateGPA(gpa);
-		this.gpa    = gpa;
+		this.gpa = gpa;
 	}
 	
 	
@@ -57,13 +47,13 @@ public class Student extends Person implements Saveable {
 		}
 	}
 	
-	
 	private static void validateGPA(double gpa) {
 		if(gpa < DEFAULT_GPA || gpa > MAX_GPA){
 			throw new IllegalArgumentException("Error, Invalid gpa: " + gpa);
 		}
 	}
 
+	
 	
 	// getters and setters
 	public String getCourse() {
@@ -89,7 +79,7 @@ public class Student extends Person implements Saveable {
 
 	
 	
-    // toString
+	// inherited methods
 	@Override
 	String getDetails() {
 		String studentDetails = this.getId() + "," + this.getName() + "," + course + "," + gpa;
@@ -113,6 +103,8 @@ public class Student extends Person implements Saveable {
 	}
 	
 	
+	
+	// toString
 	@Override
 	public String toString() {
 		return "Student " + getDetails();
