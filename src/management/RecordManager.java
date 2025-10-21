@@ -42,6 +42,7 @@ public class RecordManager {
 	
 	
 	
+	// method to search for student by id
 	public void searchStudentByID(int id) {
 		if(student_Map.containsKey(id)) {
 			Student student = getStudent(id);
@@ -62,11 +63,14 @@ public class RecordManager {
 	}
 	
 	
+	
+	// method to return student object
 	private Student getStudent(int id) {
 		Student student;
 		student = student_Map.get(id);
 		return student;
 	}
+	
 	
 	
 	// method to remove student from students
@@ -81,6 +85,7 @@ public class RecordManager {
 	
 	
 	
+	// method to convert students map to an arrayList<>()
 	public ArrayList<Student> studentsMapToList() {
 		ArrayList<Student> studentList = new ArrayList<>();
 		for(Student student : student_Map.values()) {
@@ -91,14 +96,14 @@ public class RecordManager {
 	
 	
 	
-	
+	// method to save all changes to file
 	public void saveAll(String fileName) {
 		FileHandler.saveRecords(fileName, studentsMapToList());
 	}
 	
 	
 	
-	
+	// method to load data from a given file
 	public void loadAll(String fileName) {
 		try {
 			ArrayList<Student> studentList = new ArrayList<>();
@@ -110,10 +115,7 @@ public class RecordManager {
 		catch(FileOperationException e) {
 			System.out.println(e.getMessage());
 		}
-
 	}
-	
-	
-	
+		
 	
 }
