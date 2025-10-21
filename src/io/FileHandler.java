@@ -1,6 +1,7 @@
 package io;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -23,6 +24,7 @@ public class FileHandler {
 	
 	// method to save data to a given file
 	public static void saveRecords(String fileName, ArrayList<Student> students) {
+		createBackup(fileName);
 		try (PrintWriter pw = new PrintWriter(new FileWriter(fileName))) {
 			for(int i = 0; i < students.size(); i++) {
 				pw.println(students.get(i).toFileFormat());
@@ -55,13 +57,30 @@ public class FileHandler {
 		catch(IOException e) {
 			System.out.println(e.getMessage());
 		}
-
 		return data;
 	}
 	
 	
 	
+	private static void createBackup (String fileName) {
+		String backupFile = fileName + ".bak";
+		try(BufferedReader br = new BufferedReader(new FileReader(fileName));
+			BufferedWriter bw = new BufferedWriter(new FileWriter(backupFile))){
+
+			String line;
+			while((line = br.readLine()) != null) {
+				bw.write(line);
+				bw.newLine();
+			}
+		}
+		catch(IOException e) {
+			System.out.println(e.getMessage());
+		}
+	}
 	
+	
+	
+	// hava a quick look at try with resources on youtube
 	
 	/*
 	 * For a later time...
