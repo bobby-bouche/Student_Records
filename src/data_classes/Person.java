@@ -7,10 +7,12 @@ public abstract class Person {
 	private String name;
 	
 	
+	
 	// symbolic constants
 	private static int MIN_ID_VALUE;
 	private static int MAX_ID_VALUE;
 	private static int NAME_MAX_LENGTH;
+	
 	
 	
 	// initializer
@@ -21,7 +23,8 @@ public abstract class Person {
 	}
 	
 	
-	// constructor
+	
+	// constructors
 	public Person() {
 		super();
 	}
