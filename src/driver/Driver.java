@@ -1,5 +1,8 @@
 package driver;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import data_classes.Student;
 import io.Keyboard;
 import management.RecordManager;
@@ -60,7 +63,11 @@ public class Driver {
 			switch(choice) {
 			
 				case 1:
-					displaySearchMenu();
+					List<Student> students;
+					students = manager.deSerializeAll("students.txt.ser");
+					for(Student stu : students) {
+						System.out.println(stu.getName());
+					}
 					break;
 					
 				case 2:

@@ -2,14 +2,17 @@ package io;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.List;
 
 import data_classes.Student;
 import exceptions.FileOperationException;
@@ -82,15 +85,32 @@ public class FileHandler {
 	
 	
 	
+	@SuppressWarnings("unchecked")
+	public static List<Student> deSerialize(String fileName) {
+		List<Student> students = null;
+		try(FileInputStream fileIn = new FileInputStream(fileName);
+			ObjectInputStream in = new ObjectInputStream(fileIn)) {
+			
+			students = (List<Student>) in.readObject();
+			System.out.println("students deSerialized successfully.");
+		}
+		catch(IOException e) {
+			System.out.println(e.getMessage());
+		} 
+		catch (ClassNotFoundException e) {
+			System.out.println(e.getMessage());
+		}
+		return students;
+	}
+	
+	
+	
 	public static void serialize(String fileName, ArrayList<Student> students) {
 		String serializedFile = fileName + ".ser";
 		try(FileOutputStream fileOut = new FileOutputStream(serializedFile);
 			ObjectOutputStream objOut = new ObjectOutputStream(fileOut)) {
 			
-			for(Student student : students) {
-				objOut.writeObject(student);
-			}
-			
+			objOut.writeObject(students);
 			System.out.println("students serialized successfully.");
 		}
 		catch(IOException e) {

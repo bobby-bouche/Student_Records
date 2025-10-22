@@ -2,6 +2,7 @@ package management;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import data_classes.Student;
@@ -106,6 +107,13 @@ public class RecordManager {
 	// method to serialize all objects to file
 	public void serializeAll(String fileName) {
 		FileHandler.serialize(fileName, studentsMapToList());
+	}
+	
+	
+	public List<Student> deSerializeAll(String fileName) {
+		List<Student> students;
+		students = FileHandler.deSerialize(fileName);
+		return students;
 	}
 	
 	
