@@ -103,6 +103,13 @@ public class RecordManager {
 	
 	
 	
+	// method to serialize all objects to file
+	public void serializeAll(String fileName) {
+		FileHandler.serialize(fileName, studentsMapToList());
+	}
+	
+	
+	
 	// method to load data from a given file
 	public void loadAll(String fileName) {
 		try {

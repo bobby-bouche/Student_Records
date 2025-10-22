@@ -3,9 +3,11 @@ package io;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
@@ -72,6 +74,24 @@ public class FileHandler {
 				bw.write(line);
 				bw.newLine();
 			}
+		}
+		catch(IOException e) {
+			System.out.println(e.getMessage());
+		}
+	}
+	
+	
+	
+	public static void serialize(String fileName, ArrayList<Student> students) {
+		String serializedFile = fileName + ".ser";
+		try(FileOutputStream fileOut = new FileOutputStream(serializedFile);
+			ObjectOutputStream objOut = new ObjectOutputStream(fileOut)) {
+			
+			for(Student student : students) {
+				objOut.writeObject(student);
+			}
+			
+			System.out.println("students serialized successfully.");
 		}
 		catch(IOException e) {
 			System.out.println(e.getMessage());
